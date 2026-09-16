@@ -11,14 +11,14 @@
 # Define a function with a string parameter. The paramereter in this case will
 # always be the path to the file. For example, for the human HbA1 coding sequence
 # the path will be "H_sapiens_HbA1/cds.fna".
-def fasta(file_location:str):
+def fasta_parser(file_location:str):
 
     # Variable x records the locations of where the objects with the headerlines(">")
     # thereby detecting where one record starts and, potentially, where one record ends.
     x = list()
     # An empty list variable that will later contain all the records spliced from the
     # fasta file as a nested list.
-    sequences = list()
+    records = list()
 
     # Open the fasta file and define variable data as a list containing everything in 
     # the file.
@@ -34,10 +34,17 @@ def fasta(file_location:str):
         x.append(len(data))
 
         # Redefine the sequence variable as a nested list of records from the fasta file.
-        sequences = [data[x[i]:x[i+1]] for i in range(len(x)-1)]
+        records = [data[x[i]:x[i+1]] for i in range(len(x)-1)]
     
     # Return the sequences variable, which is a nested list of records from the fasta
     # file.
-    return sequences
+    return records
 
-print(fasta("H_sapiens_HbA1/gene.fna"))
+def fasta_sorter(records:list):
+    organised = dict()
+    for record in records:
+        x = record[0].split()
+
+    return ""
+
+print(fasta_parser("H_sapiens_HbA1/gene.fna"))
