@@ -42,16 +42,40 @@ def fasta_parser(file_location:str):
     # file.
     return records
 
+# fasta_parser opens the file and separates all records in the file into nested lists.
+# This data should be better organised, a list of nested records is just messy.
+
+# Define the function fasta_sorter which takes in a list as a parameter.
 def fasta_sorter(records:list):
+
+    # The information should be organised into a dict, so assign an empty dict to the 
+    # variable "organised"
     organised = dict()
+
+    # Iterate through each record in records
     for record in records:
+
+        # Information within each record will be put into a dict.
         accession = dict()
+
+        # Preserve the headline of the record as is, just to ensure no loss of data.
         accession["headline"] = record[0]
+
+        # There are a few metadata within the headline organised into [key=value] format
+        # so assign them as "key : value" within the dict using the findall function.
         for key, value in findall(r"\[(.*?)=(.*?)\]", record[0]):
             accession[key] = value
+
+        # Isolate the gene name and the accession from the headline
         x = record[0].split("[")[0].split()
         accession["gene"] = x[1]
+
+        # Merge the sequence lines together to produce a single string containing the entire
+        # sequence and assign it to the key "sequence" within the accession dict.
         accession["sequence"] = "".join(record[1:]).replace("\n", "")
+
+        # Insert the accession dict containing all the info from the record into the organised
+        # variable as a nested dict.
         organised[x[0][1:]] = accession
     return organised
 
