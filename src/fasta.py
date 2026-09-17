@@ -1,9 +1,11 @@
-# A local file containing functions to parse fasta files into dict.
+ #  A local file containing functions to parse fasta files into dict.
 
 # Totally inefficient and would not recommend.
 # Better to use a library like Biopython.
 # But I am trying to learn to work with python and fasta files.
 # So doing it this way helps.
+
+from re import findall
 
 # Some fasta files, like some of the ones I have chosen, have multiple records
 # within them. So, you can't just do "".join(open(file,"r").readlines()[1:])
@@ -43,8 +45,16 @@ def fasta_parser(file_location:str):
 def fasta_sorter(records:list):
     organised = dict()
     for record in records:
-        x = record[0].split()
+        accession = dict()
+        accession["headline"] = record[0]
+        for key, value in findall(r"\[(.*?)=(.*?)\]", record[0]):
+            accession[key] = value
+        x = record[0].split("[")[0].split()
+        accession["gene"] = x[1]
+        accession["sequence"] = "".join(record[1:]).replace("\n", "")
+        organised[x[0][1:]] = accession
+    return organised
 
-    return ""
+# print(fasta_sorter(fasta_parser("../H_sapiens_HbA1/gene.fna")))
 
-print(fasta_parser("H_sapiens_HbA1/gene.fna"))
+# print(fasta_parser("../H_sapiens_HbA1/gene.fna"))
