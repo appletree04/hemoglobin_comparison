@@ -68,7 +68,7 @@ def fasta_sorter(records:list):
         record_dict["Sequence"] = "".join(record[1:]).replace("\n", "")
 
         # Preserve the headline of the record as is, just to ensure no loss of data.
-        record_dict["Headline"] = record[0]
+        record_dict["Headline"] = record[0][:len(record[0])-1]
 
         # There are a few metadata within the headline organised into [key=value] format
         # so assign them as "key : value" within the dict using the findall function.
@@ -108,11 +108,37 @@ def clean_duplicates(records:list):
     # Return a list of unique records with no duplicates
     return unique
 
+# Example output:
+# [
+#     {
+#         'Gene': 'HBA1',
+#         'Accession': 'NC_000016.10:176680-177522',
+#         'Sequence': 'ACTCTTCTGGTCCCCACAGACTCAGAGAGAACCCACCATGGTGCTGTCTCCTGCCGACAAGACCAACGTCAAGGCCGCCTGGGGTAAGGTCGGCGCGCACGCTGGCGAGTATGGTGCGGAGGCCCTGGAGAGGTGAGGCTCCCTCCCCTGCTCCGACCCGGGCTCCTCGCCCGCCCGGACCCACAGGCCACCCTCAACCGTCCTGGCCCCGGACCCAAACCCCACCCCTCACTCTGCTTCTCCCCGCAGGATGTTCCTGTCCTTCCCCACCACCAAGACCTACTTCCCGCACTTCGACCTGAGCCACGGCTCTGCCCAGGTTAAGGGCCACGGCAAGAAGGTGGCCGACGCGCTGACCAACGCCGTGGCGCACGTGGACGACATGCCCAACGCGCTGTCCGCCCTGAGCGACCTGCACGCGCACAAGCTTCGGGTGGACCCGGTCAACTTCAAGGTGAGCGGCGGGCCGGGAGCGATCTGGGTCGAGGGGCGAGATGGCGCCTTCCTCGCAGGGCAGAGGATCACGCGGGTTGCGGGAGGTGTAGCGCAGGCGGCGGCTGCGGGCCTGGGCCCTCGGCCCCACTGACCCTCTTCTCTGCACAGCTCCTAAGCCACTGCCTGCTGGTGACCCTGGCCGCCCACCTCCCCGCCGAGTTCACCCCTGCGGTGCACGCCTCCCTGGACAAGTTCCTGGCTTCTGTGAGCACCGTGCTGACCTCCAAATACCGTTAAGCTGGAGCCTCGGTGGCCATGCTTCTTGCCCCTTGGGCCTCCCCCCAGCCCCTCCTCCCCTTCCTGCACCCGTACCCCCGTGGTCTTTGAATAAAGTCTGAGTGGGCGGCA',
+#         'Headline': '>NC_000016.10:176680-177522 HBA1 [organism=Homo sapiens] [GeneID=3039] [chromosome=16]',
+#         'organism': 'Homo sapiens',
+#         'GeneID': '3039',
+#         'chromosome': '16'
+#     }
+# ]
+
+
 # def table(result:list):
 #     table = pd.DataFrame(
 #         result
 #     )
 #     return table
+
+print(
+    clean_duplicates(
+        fasta_sorter(
+            fasta_parser(
+                "../raw_data/H_sapiens_HbA1/gene.fna"
+            )
+        )
+    )
+)
+
+
 
 # print(
 #     table(
