@@ -42,8 +42,8 @@ all_folders = [
     "H_sapiens_HbA2",
     "M_musculus_Hba-a1",
     "M_musculus_Hba-a2",
-    "P_troglodyes_HbA1",
-    "P_troglodyes_HbA2"
+    "P_troglodytes_HbA1",
+    "P_troglodytes_HbA2"
 ]
 
 create_json(all_folders)
