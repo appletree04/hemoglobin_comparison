@@ -4,6 +4,7 @@
 # Better to use a library like Biopython.
 # But I am trying to learn to work with python and fasta files.
 # So doing it this way helps.
+# I hope.
 
 from re import findall
 
