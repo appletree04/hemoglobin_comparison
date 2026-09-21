@@ -1,4 +1,4 @@
- #  A local file containing functions to parse fasta files into a list of dicts.
+#  A local file containing functions to parse fasta files into a list of dicts.
 
 # Totally inefficient and would not recommend.
 # Better to use a library like Biopython.
