@@ -29,7 +29,8 @@ def load_data(folder:str):
         "cds_accession": cds["Accession"],
         "rna_accession": rna["Accession"],
         "aa_accession": aa["Accession"],
-        "source": f"../raw_data/{folder}"
+        "source": f"../raw_data/{folder}",
+        "aplha_globin": folder[-1]
     }
 
 # We are creating a single json file with data from all the files.
