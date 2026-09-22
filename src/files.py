@@ -9,10 +9,10 @@ from fasta import fasta
 def load_data(folder:str):
 
     # The folders contain four files each and we need the data from each of them.
-    cds = fasta(f"../raw_data/{folder}/cds.fna")
-    gene = fasta(f"../raw_data/{folder}/gene.fna")
-    rna = fasta(f"../raw_data/{folder}/rna.fna")
-    aa = fasta(f"../raw_data/{folder}/protein.faa")
+    cds = fasta(f"../data/raw_data/{folder}/cds.fna")
+    gene = fasta(f"../data/raw_data/{folder}/gene.fna")
+    rna = fasta(f"../data/raw_data/{folder}/rna.fna")
+    aa = fasta(f"../data/raw_data/{folder}/protein.faa")
 
     # Once we have the data, we return the name of the folder and a dict with
     # the data organised as shown below.
@@ -29,7 +29,7 @@ def load_data(folder:str):
         "cds_accession": cds["Accession"],
         "rna_accession": rna["Accession"],
         "aa_accession": aa["Accession"],
-        "source": f"../raw_data/{folder}",
+        "source": f"../data/raw_data/{folder}",
         "alpha_globin": folder[-1]
     }
 
@@ -49,7 +49,7 @@ def create_json(folders:list):
 
     # Then we open the location and file into which the data is to be inserted into
     # and dump the data into the json file in JSON format.
-    with open("../processed_data/data.json", "w") as file:
+    with open("../data/processed_data/data.json", "w") as file:
         json.dump(all_dicts, file, indent=4)
 
 # List of the names of all the folders

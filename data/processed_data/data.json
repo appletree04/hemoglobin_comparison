@@ -12,7 +12,7 @@
         "cds_accession": "NM_131257.3:49-480",
         "rna_accession": "NM_131257.3",
         "aa_accession": "NP_571332.3",
-        "source": "../raw_data/D_rerio_hbaa1",
+        "source": "../data/raw_data/D_rerio_hbaa1",
         "alpha_globin": "1"
     },
     "D_rerio_hbaa2": {
@@ -28,7 +28,7 @@
         "cds_accession": "NM_001013461.2:175-606",
         "rna_accession": "NM_001013461.2",
         "aa_accession": "NP_001013479.2",
-        "source": "../raw_data/D_rerio_hbaa2",
+        "source": "../data/raw_data/D_rerio_hbaa2",
         "alpha_globin": "2"
     },
     "H_sapiens_HbA1": {
@@ -44,7 +44,7 @@
         "cds_accession": "NM_000558.5:38-466",
         "rna_accession": "NM_000558.5",
         "aa_accession": "NP_000549.1",
-        "source": "../raw_data/H_sapiens_HbA1",
+        "source": "../data/raw_data/H_sapiens_HbA1",
         "alpha_globin": "1"
     },
     "H_sapiens_HbA2": {
@@ -60,7 +60,7 @@
         "cds_accession": "NM_000517.6:38-466",
         "rna_accession": "NM_000517.6",
         "aa_accession": "NP_000508.1",
-        "source": "../raw_data/H_sapiens_HbA2",
+        "source": "../data/raw_data/H_sapiens_HbA2",
         "alpha_globin": "2"
     },
     "M_musculus_Hba-a1": {
@@ -76,7 +76,7 @@
         "cds_accession": "NM_008218.2:36-464",
         "rna_accession": "NM_008218.2",
         "aa_accession": "NP_032244.2",
-        "source": "../raw_data/M_musculus_Hba-a1",
+        "source": "../data/raw_data/M_musculus_Hba-a1",
         "alpha_globin": "1"
     },
     "M_musculus_Hba-a2": {
@@ -92,7 +92,7 @@
         "cds_accession": "NM_001083955.1:33-461",
         "rna_accession": "NM_001083955.1",
         "aa_accession": "NP_001077424.1",
-        "source": "../raw_data/M_musculus_Hba-a2",
+        "source": "../data/raw_data/M_musculus_Hba-a2",
         "alpha_globin": "2"
     },
     "P_troglodytes_HbA1": {
@@ -108,7 +108,7 @@
         "cds_accession": "NM_001042626.1:38-466",
         "rna_accession": "NM_001042626.1",
         "aa_accession": "NP_001036091.1",
-        "source": "../raw_data/P_troglodytes_HbA1",
+        "source": "../data/raw_data/P_troglodytes_HbA1",
         "alpha_globin": "1"
     },
     "P_troglodytes_HbA2": {
@@ -124,7 +124,7 @@
         "cds_accession": "NM_001042627.1:38-466",
         "rna_accession": "NM_001042627.1",
         "aa_accession": "NP_001036092.1",
-        "source": "../raw_data/P_troglodytes_HbA2",
+        "source": "../data/raw_data/P_troglodytes_HbA2",
         "alpha_globin": "2"
     }
 }

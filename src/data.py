@@ -2,7 +2,7 @@ import json
 
 def create_fasta(data, file_path, sequence_type):
 
-    with open("../processed_data/data.json") as d:
+    with open("../data/processed_data/data.json") as d:
         objs = json.load(d)
 
     with open(file_path, "w") as f:
@@ -29,7 +29,7 @@ def generate_files():
             extension = "faa" if sequence == "aa_sequence" else "fna"
             create_fasta(
                 folders[folder],
-                f"../Fasta/{folder}/{sequence}.{extension}",
+                f"../data/fasta/{folder}/{sequence}.{extension}",
                 sequence
             )
 
