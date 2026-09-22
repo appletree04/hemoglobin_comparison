@@ -14,12 +14,12 @@ def create_fasta(data, file_path, sequence_type):
 def generate_files():
     
     folders = {
-        "alpha1" : ["D_rerio_hbaa1", "H_sapiens_HbA1", "M_musculus_Hba-a1", "P_troglodytes_HbA1"],
-        "alpha2" : ["D_rerio_hbaa2", "H_sapiens_HbA2", "M_musculus_Hba-a2", "P_troglodytes_HbA2"],
-        "D_rerio" : ["D_rerio_hbaa1", "D_rerio_hbaa2"],
+        "alpha1" : ["H_sapiens_HbA1", "P_troglodytes_HbA1", "M_musculus_Hba-a1", "D_rerio_hbaa1"],
+        "alpha2" : ["H_sapiens_HbA2", "P_troglodytes_HbA2", "M_musculus_Hba-a2", "D_rerio_hbaa2"],
         "H_sapiens" : ["H_sapiens_HbA1", "H_sapiens_HbA2"],
+        "P_troglodytes" : ["P_troglodytes_HbA1", "P_troglodytes_HbA2"],
         "M_Musculus" : ["M_musculus_Hba-a1", "M_musculus_Hba-a2"],
-        "P_troglodytes" : ["P_troglodytes_HbA1", "P_troglodytes_HbA2"]
+        "D_rerio" : ["D_rerio_hbaa1", "D_rerio_hbaa2"]
     }
     
     sequences = ["gene_sequence", "cds", "rna", "aa_sequence"]
