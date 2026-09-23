@@ -64,8 +64,20 @@ all_folders = [
     "P_troglodytes_HbA2"
 ]
 
-# Call the create_json function with a list of all the folders
-create_json(all_folders)
+def call_create_json():
+    all_folders = [
+        "D_rerio_hbaa1",
+        "D_rerio_hbaa2",
+        "H_sapiens_HbA1",
+        "H_sapiens_HbA2",
+        "M_musculus_Hba-a1",
+        "M_musculus_Hba-a2",
+        "P_troglodytes_HbA1",
+        "P_troglodytes_HbA2"
+    ]
+    # Call the create_json function with a list of all the folders
+    create_json(all_folders)
+    pass
 
 # print(load_data("../raw_data/H_sapiens_HbA1", "H_sapiens_HbA1"))
 # print(create_json(["H_sapiens_HbA1", "H_sapiens_HbA2"]))

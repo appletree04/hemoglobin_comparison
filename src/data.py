@@ -33,5 +33,4 @@ def generate_files():
                 sequence
             )
 
-
-generate_files()
+    pass
