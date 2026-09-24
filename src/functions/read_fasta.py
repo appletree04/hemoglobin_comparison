@@ -121,7 +121,7 @@ def clean_duplicates(records:list):
 # }
 
 
-def fasta(file_path):
+def read_fasta(file_path):
     return clean_duplicates(
         fasta_sorter(
             fasta_parser(
