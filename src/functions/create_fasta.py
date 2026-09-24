@@ -10,7 +10,7 @@ def generate_fasta(data, file_path:Path, sequence_type, objs):
             f.write(objs[value][sequence_type] + "\n")
 
 
-def create_fasta():
+def create_fasta(fasta_path:Path):
     with open(f"{ROOT}/data/processed_data/data.json") as d:
             objs = json.load(d)
 
@@ -25,8 +25,8 @@ def create_fasta():
 
     for folder in folders.keys():
 
-        folder_path = f"{ROOT}/data/fasta/{folder}"
-        Path.mkdir(Path(folder_path), parents=True, exist_ok=True)
+        folder_path = Path(f"{fasta_path}/{folder}")
+        Path.mkdir(folder_path, parents=True, exist_ok=True)
 
         for sequence in sequences:
             extension = "faa" if sequence == "aa_sequence" else "fna"

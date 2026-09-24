@@ -14,7 +14,7 @@ def create_figures(folder, file):
     fig.savefig(f"{ROOT}/data/figures/{folder}/{file}.png", bbox_inches="tight", pad_inches=0.2)
 
 
-def figures():
+def figures(figure_path):
 
     folders = [
         p.name
@@ -23,10 +23,10 @@ def figures():
     ]
     files = ["gene_sequence", "cds", "rna", "aa_sequence"]
 
-    Path.mkdir(Path(f"{ROOT}/data/figures"), parents=True, exist_ok=True)
+    Path.mkdir(Path(f"{figure_path}"), parents=True, exist_ok=True)
 
     for folder in folders:
-        Path.mkdir(Path(f"{ROOT}/data/figures/{folder}"), parents=True, exist_ok=True)
+        Path.mkdir(Path(f"{figure_path}/{folder}"), parents=True, exist_ok=True)
         for file in files:
             create_figures(folder, file)
 # create_figures("D_rerio", "cds")

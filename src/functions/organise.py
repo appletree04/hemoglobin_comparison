@@ -56,10 +56,10 @@ def create_json(folders:list, file_path:Path):
 
 # List of the names of all the folders
 
-def organise():
+def organise(raw_data:Path):
     all_folders = [
         p.name
-        for p in Path(f"{ROOT}/data/raw_data").iterdir()
+        for p in raw_data.iterdir()
         if p.is_dir()
     ]
 
