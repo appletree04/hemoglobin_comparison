@@ -13,10 +13,10 @@ def run_muscle(folder, file):
         ], check=True
     )
 
-def align():
+def align(fasta_path:Path):
     folders = [
         p.name
-        for p in Path(f"{ROOT}/data/fasta").iterdir()
+        for p in fasta_path.iterdir()
         if p.is_dir()
     ]
     files = ["gene_sequence.fna", "rna.fna", "cds.fna", "aa_sequence.faa"]
